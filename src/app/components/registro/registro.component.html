@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-12">
+        <div class="form-container animate__animated animate__fadeInRight">
+            <form #f="ngForm" (ngSubmit)="registrar(f)" class="form-registro border border-primary">
+                <h1 class="text-center">Crear nueva cuenta</h1>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Correo" [(ngModel)]="usuario.email" required email>
+                    <span *ngIf="f.submitted && f.controls.email.errors" class="text-danger ml-1">
+                        <small class="animate__animated animate__fadeIn">El correo es obligatorio</small>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombres y apellidos" [(ngModel)]="usuario.nombre" required minlength="2">
+                    <span *ngIf="f.submitted && f.controls.nombre.errors" class="text-danger ml-1">
+                        <small class="animate__animated animate__fadeIn">El nombre y apellido son obligatorios</small>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Contraseña" [(ngModel)]="usuario.password" required minlength="6">
+                    <span *ngIf="f.submitted && f.controls.password.errors" class="text-danger ml-1">
+                        <small class="animate__animated animate__fadeIn">La contraseña debe tener almenos 6 caracteres</small>
+                    </span>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" name="recordarClave" class="form-check-input" id="exampleCheck1" [(ngModel)]="recordarClave">
+                    <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
+                </div>
+                <div class="text-center m-4">
+                    <small>
+                        <a class="text-white" routerLink="/login">¿Ya tienes cuenta? / Ingresar</a>
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+</div>

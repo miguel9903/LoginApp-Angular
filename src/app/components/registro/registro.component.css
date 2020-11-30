@@ -1,0 +1,27 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-registro {
+    width: 35%;
+    border-radius: 10px;
+    padding: 25px;
+    color: white;
+    background-color: rgba(41, 128, 185, 0.6);
+}
+
+.form-registro h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.form-registro input {
+    background-color: transparent;
+}
+
+input::placeholder {
+    color: white;
+}
